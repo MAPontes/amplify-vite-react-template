@@ -22,6 +22,12 @@ function App() {
     sub.unsubscribe();
   }
 
+  function addChannel() {
+    client.models.Channel.create({
+      name: "world",
+    });
+  }
+
   function addItem() {
     client.mutations.publish({
       channelName: "world",
@@ -33,6 +39,8 @@ function App() {
     <main>
       <h1>My Custom Subs</h1>
       <button onClick={unsub}>Unsubscribe</button>
+      <h1></h1>
+      <button onClick={addChannel}>Add Channel</button>
       <h1></h1>
       <button onClick={addItem}>Add Item</button>
     </main>
